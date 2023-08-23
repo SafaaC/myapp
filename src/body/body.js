@@ -6,7 +6,8 @@ const obj={
     header:"React",
     description:"Component",
     item1:"functional component  ",
-    item2:"class component"
+    item2:"class component",
+    isActive: true
 }
 
 
@@ -21,9 +22,10 @@ function BodyDisplayFunction(){
             <p>It is difficult to write 1000s of line in a single file. so seperated them into different file,
                with the support od react in the form of components.
                Props are arguments passed into React components.Props are passed to components via HTML attributes.
+               if the prop is not having value , its default value is true
             </p>
             <Para/>
-            <List header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2}/>
+            <List header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
            
       </div>
     
