@@ -3,15 +3,17 @@ import ListItem from './listItem';
 
 class List extends React.Component{
    render(){
+
+    const props= this.props; //should use the same word this.props
     return(
         <div className="list">
             <div className="list-header">
-                <h3>{this.props.header}</h3>
+                <h3>{props.header}</h3>
             </div>
             <div className="list-desc">
-                <p>{this.props.desc}</p>
+                <p>{props.desc}</p>
             </div>
-            <ListItem item1={this.props.item1} item2={this.props.item2}/>
+            <ListItem item1={props.item1} item2={props.item2}/>
         </div>
         
     )
