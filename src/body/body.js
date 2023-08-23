@@ -1,31 +1,38 @@
 import React from 'react';
 import Para from './para.js'
+import Paras from './paras.js'
 import List from './list.js'
 
-const obj={
-    header:"React",
-    description:"Component",
-    item1:"functional component  ",
-    item2:"class component",
-    isActive: true
-}
+const arr=[
+        {
+            header:"JSX",
+            description:"small addition to JS",
+            item1:" JS  ",
+            item2:" XML",
+            isActive: true
+        },
+        {
+            header:"React",
+            description:"Component",
+            item1:"functional component  ",
+            item2:"class component",
+            isActive: false
+        }
+]
 
 
 function BodyDisplayFunction(){
     return(
       <div id="myId" className='class' >
-             <p>Since class is a keyword use className as an attribute in html tag.for the same reason use htmlFor
-             instead of for attribute.For giving inline style to tag , make an object and define styles as key: value pair
-            where the key should not have - or space use Camel cases(background-color=backgroundColor),and 
-            pass the object within curely braces</p>
-            <p>we can pass only a sigle statement in curely braces</p>
-            <p>It is difficult to write 1000s of line in a single file. so seperated them into different file,
-               with the support od react in the form of components.
-               Props are arguments passed into React components.Props are passed to components via HTML attributes.
-               if the prop is not having value , its default value is true
-            </p>
+            <Paras/>
             <Para/>
-            <List header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
+            <div>
+                {
+                    arr.map((obj,index)=><List key={index} header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
+                    )
+                }
+            </div>
+            
            
       </div>
     
