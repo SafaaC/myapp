@@ -1,5 +1,5 @@
 import React from 'react';
-import Tools from './tools';
+
 
 //function ListItem({item1,item2}){  //parameter de structuring
 function ListItem(props){   // can give any name as param
@@ -7,10 +7,11 @@ function ListItem(props){   // can give any name as param
    
     return (
         <div>
-        <Tools>
-        <p onClick={()=>onAction(item1) }>{item1}</p>
-        <p onClick={()=>console.log(item2)}>{item2}</p>
-        </Tools>
+        <ul>
+            <li onClick={()=>onAction(item1) }>{item1}</li>
+            <li onClick={()=>console.log(item2)}>{item2}</li>
+        </ul>
+       
         </div>
     )
 }

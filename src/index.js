@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import BodyDisplayFunction from './body/body.js'
+import Nav from './body/nav.js';
+
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -14,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <div>
         <div className="header">
-        <h1>Heading</h1>
+          <Nav/>
         </div>
         <div className="body">
           <BodyDisplayFunction/>     {/* {bodyDisplayFunction()} */}
