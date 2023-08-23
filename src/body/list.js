@@ -14,7 +14,7 @@ class List extends React.Component{
             <div className="list-desc">
                 <p>{props.desc}</p>
             </div>
-            <ListItem  item1={props.item1} item2={props.item2}/>
+            <ListItem onAction={(item)=>console.log(item)} item1={props.item1} item2={props.item2}/>
         </div>
         
     )
