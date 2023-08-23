@@ -1,5 +1,6 @@
 import React from 'react';
 import Para from './para.js'
+import List from './list.js'
 function BodyDisplayFunction(){
     return(
       <div id="myId" className='class' >
@@ -13,6 +14,7 @@ function BodyDisplayFunction(){
                Props are arguments passed into React components.Props are passed to components via HTML attributes.
             </p>
             <Para/>
+            <List/>
       </div>
     
     )
