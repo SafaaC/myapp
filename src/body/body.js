@@ -1,6 +1,14 @@
 import React from 'react';
 import Para from './para.js'
 import List from './list.js'
+
+const obj={
+    header:"React",
+    description:"Functional and class Component",
+    item:"component"
+}
+
+
 function BodyDisplayFunction(){
     return(
       <div id="myId" className='class' >
@@ -14,6 +22,8 @@ function BodyDisplayFunction(){
                Props are arguments passed into React components.Props are passed to components via HTML attributes.
             </p>
             <Para/>
+            <List header={obj.header} desc={obj.description} item={obj.item}/>
+            <List/>
             <List/>
       </div>
     
