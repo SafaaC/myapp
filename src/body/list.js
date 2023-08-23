@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ListItem from './listItem';
 
 class List extends React.Component{
    render(){
@@ -11,9 +11,7 @@ class List extends React.Component{
             <div className="list-desc">
                 <p>{this.props.desc}</p>
             </div>
-            <div className="list-item">
-                <span>{this.props.item}</span>
-            </div>
+            <ListItem item1={this.props.item1} item2={this.props.item2}/>
         </div>
         
     )

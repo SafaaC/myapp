@@ -4,8 +4,9 @@ import List from './list.js'
 
 const obj={
     header:"React",
-    description:"Functional and class Component",
-    item:"component"
+    description:"Component",
+    item1:"functional component  ",
+    item2:"class component"
 }
 
 
@@ -22,9 +23,8 @@ function BodyDisplayFunction(){
                Props are arguments passed into React components.Props are passed to components via HTML attributes.
             </p>
             <Para/>
-            <List header={obj.header} desc={obj.description} item={obj.item}/>
-            <List/>
-            <List/>
+            <List header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2}/>
+           
       </div>
     
     )
