@@ -29,6 +29,7 @@ class Tools extends React.Component{
                     {children}
                 </div>
                 <div onClick={this.change} className='list-footer'>
+                     //use this.change.bind(this) is it is passing to another component
                     some info of {this.state.data}
                 </div>
             </div>
