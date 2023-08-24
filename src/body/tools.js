@@ -2,11 +2,11 @@ import React from 'react';
 
 class Tools extends React.Component{
     render(){
-        const{children}=this.props;
+        const{children,onAction}=this.props;
         return (
             <div>
                 <div className ="list-header">
-                    <select name ="status">
+                    <select onChange={onAction} name ="status">
                         <option value="all">All</option>
                         <option value="active">Active</option>
                         <option value="non-active">Non Active</option>

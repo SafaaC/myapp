@@ -3,8 +3,9 @@ import Para from './para.js'
 import Paras from './paras.js'
 import List from './list.js'
 import Tools from './tools.js';
+import { useState } from "react";  
 
-const arr=[
+let arr=[
         
         {
             header:"React",
@@ -30,15 +31,36 @@ const arr=[
 ]
 
 
+
 function BodyDisplayFunction(){
+    var [data,setData] =useState(arr);
+    function onListChange(event){
+        console.log(event.target.value);
+        const value=event.target.value;
+        let newArr= arr.filter((item) =>{
+            if(value==='all'){
+                return true;
+            }
+            if(value==='active'){
+                return item.isActive===true;
+            }
+            if(value==='non-active'){
+                return item.isActive===false;
+            }
+               
+            return false;
+        })
+        console.log(newArr);
+        setData(newArr);
+    }
     return(
       <div id="myId" className='class' >
             <Paras/>
             <Para/>
-            <Tools>
+            <Tools onAction={onListChange}>
                 <div>
                     {
-                        arr.map((obj,index)=><List key={index} header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
+                        data.map((obj,index)=><List key={index} header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
                         )
                     }
                 </div>
