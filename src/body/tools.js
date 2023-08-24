@@ -1,6 +1,19 @@
 import React from 'react';
 
 class Tools extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            data:"React"
+        };
+    }
+    change=() =>{
+        this.setState(
+            {
+                data:"React Framework"
+            }
+        );
+    }
     render(){
         const{children,onAction}=this.props;
         return (
@@ -15,8 +28,8 @@ class Tools extends React.Component{
                 <div>
                     {children}
                 </div>
-                <div className='list-footer'>
-                    some info
+                <div onClick={this.change} className='list-footer'>
+                    some info of {this.state.data}
                 </div>
             </div>
         )
