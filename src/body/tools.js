@@ -29,9 +29,10 @@ class Tools extends React.Component{
                     {children}
                 </div>
                 <div onClick={this.change} className='list-footer'>
-                     //use this.change.bind(this) is it is passing to another component or make the called fn arrow
+     
                     some info of {this.state.data}
                 </div>
+                {/* use this.change.bind(this) is it is passing to another component or make the called fn arrow */}
             </div>
         )
     }
