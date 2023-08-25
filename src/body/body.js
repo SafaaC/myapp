@@ -33,26 +33,41 @@ let arr=[
 
 
 function BodyDisplayFunction(){
-    var [data,setData] =useState(arr);
+    const [data,setData] =useState(arr);
+    const [status,setStatus] =useState('all');
     function onListChange(event){
         console.log(event.target.value);
         const value=event.target.value;
-        let newArr= arr.filter((item) =>{
-            if(value==='all'){
-                return true;
-            }
-            if(value==='active'){
-                return item.isActive===true;
-            }
-            if(value==='non-active'){
-                return item.isActive===false;
-            }
+        // let newArr= data.filter((item) =>{
+        //     if(status==='all'){
+        //         return true;
+        //     }
+        //     if(status==='active'){
+        //         return item.isActive===true;
+        //     }
+        //     if(status==='non-active'){
+        //         return item.isActive===false;
+        //     }
                
-            return false;
-        })
-        console.log(newArr);
-        setData(newArr);
+        //     return false;
+        // })
+        // console.log(newArr);
+        setStatus(value);
     }
+    let newArr= data.filter((item) =>{
+        if(status==='all'){
+            return true;
+        }
+        if(status==='active'){
+            return item.isActive===true;
+        }
+        if(status==='non-active'){
+            return item.isActive===false;
+        }
+           
+        return false;
+    })
+    console.log(newArr);
     return(
       <div id="myId" className='class' >
             <Paras/>
@@ -60,7 +75,7 @@ function BodyDisplayFunction(){
             <Tools onAction={onListChange}>
                 <div>
                     {
-                        data.map((obj,index)=><List key={index} header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
+                        newArr.map((obj,index)=><List key={index} header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
                         )
                     }
                 </div>
