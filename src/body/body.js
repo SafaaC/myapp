@@ -3,7 +3,8 @@ import Para from './para.js'
 import Paras from './paras.js'
 import List from './list.js'
 import Tools from './tools.js';
-import { useState } from "react";  
+import { useState } from "react"; 
+import SimpleList from './SimpleList.js';
 
 let arr=[
         
@@ -38,20 +39,6 @@ function BodyDisplayFunction(){
     function onListChange(event){
         console.log(event.target.value);
         const value=event.target.value;
-        // let newArr= data.filter((item) =>{
-        //     if(status==='all'){
-        //         return true;
-        //     }
-        //     if(status==='active'){
-        //         return item.isActive===true;
-        //     }
-        //     if(status==='non-active'){
-        //         return item.isActive===false;
-        //     }
-               
-        //     return false;
-        // })
-        // console.log(newArr);
         setStatus(value);
     }
     let newArr= data.filter((item) =>{
@@ -67,18 +54,20 @@ function BodyDisplayFunction(){
            
         return false;
     })
+
+    let deleteHandler=(index)=>{
+        console.log("delete",index);
+        const newArr=data.filter((element,ind)=>ind!==index);
+        setData(newArr);
+    }
+
     console.log(newArr);
     return(
       <div id="myId" className='class' >
             <Paras/>
             <Para/>
             <Tools onAction={onListChange}>
-                <div>
-                    {
-                        newArr.map((obj,index)=><List key={index} header={obj.header} desc={obj.description} item1={obj.item1} item2={obj.item2} isActive={obj.isActive}/>
-                        )
-                    }
-                </div>
+                <SimpleList data={newArr} onAction={deleteHandler}/>  //CONTROLLED COMPONENT
              </Tools>    
       </div>   
     )

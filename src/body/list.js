@@ -9,6 +9,7 @@ class List extends React.Component{
     const style =props.isActive ? {color:'green'} : {color:'red'};
     return(
         <div className="list">
+            <button onClick={props.onDelete}>Delete</button>
             <div className="list-header"> 
                 <h3 >{props.header}</h3>
             </div>
