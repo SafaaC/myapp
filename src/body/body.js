@@ -71,7 +71,7 @@ function BodyDisplayFunction(){
                 <SimpleList data={newArr} onAction={deleteHandler}/>  
                 {/* CONTROLLED COMPONENT */}
             </Tools>
-            <Conditional/> 
+            <Conditional isLoggedIn={true}/> 
       </div>   
     )
   }

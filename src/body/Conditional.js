@@ -1,11 +1,23 @@
 import React from 'react';
-function Conditional(){
-    let number=8;
+import './Logged.js';
+import './NotLogged.js';
+import Logged from './Logged.js';
+import NotLogged from './NotLogged.js';
+function Conditional({isLoggedIn}){
+    // let number=8;
+    // return(
+        
+    //     <div>
+    //         {
+    //             number>0? (<p>Positive</p>) : number<0 ?(<p>Negative</p>) : (<p>Zero</p>)
+    //         }
+    //     </div>
+    // );
     return(
         
         <div>
             {
-                number>0? (<p>Positive</p>) : number<0 ?(<p>Negative</p>) : (<p>Zero</p>)
+                isLoggedIn?   <Logged/> :<NotLogged/>
             }
         </div>
     );
