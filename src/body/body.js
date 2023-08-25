@@ -5,6 +5,7 @@ import List from './list.js'
 import Tools from './tools.js';
 import { useState } from "react"; 
 import SimpleList from './SimpleList.js';
+import Conditional from './Conditional.js';
 
 let arr=[
         
@@ -67,8 +68,10 @@ function BodyDisplayFunction(){
             <Paras/>
             <Para/>
             <Tools onAction={onListChange}>
-                <SimpleList data={newArr} onAction={deleteHandler}/>  //CONTROLLED COMPONENT
-             </Tools>    
+                <SimpleList data={newArr} onAction={deleteHandler}/>  
+                {/* CONTROLLED COMPONENT */}
+            </Tools>
+            <Conditional/> 
       </div>   
     )
   }
