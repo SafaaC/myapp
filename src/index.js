@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import BodyDisplayFunction from './body/body.js'
-import Nav from './body/nav.js';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarDemo from './body/navbar.js';
+import Card from 'react-bootstrap/Card';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -13,17 +14,19 @@ import Nav from './body/nav.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(
-    <div>
-        <div className="header">
-          <Nav/>
-        </div>
-        <div className="body">
-          <BodyDisplayFunction/>     {/* {bodyDisplayFunction()} */}
-        </div>
-    </div>
-    
-  );
+root.render(
+  <Card>
+    <Card.Body>
+      <div className="header">
+        <NavbarDemo />
+      </div>
+      <div className="body">
+        <BodyDisplayFunction />     {/* {bodyDisplayFunction()} */}
+      </div>
+    </Card.Body>
+  </Card>
+
+);
 
 
 // const styleObj1={
