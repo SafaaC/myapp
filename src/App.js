@@ -1,9 +1,13 @@
+import {  Container } from 'react-bootstrap';
 import './App.css';
 import Product from './Products/Product';
 
 function App() {
   return (
-    <Product/>
+    <Container>
+        <Product/>
+    </Container>
+    
   );
 }
 
